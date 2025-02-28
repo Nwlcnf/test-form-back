@@ -52,11 +52,19 @@ router.post('/api/users/create', async (req, res) => {
     }
 
     try {
+        // Vérifier si l'email existe déjà dans la base de données
+        const existingUser = await User.findOne({ email });
+
+        if (existingUser) {
+            return res.status(400).json({ error: 'L\'email est déjà utilisé' });
+        }
+
+        // Si l'email est unique, créer l'utilisateur
         const newUser = new User({ nom, prenom, email, date, ville, code });
         await newUser.save();
         res.status(201).json(newUser);
     } catch (error) {
-        console.error(error.message);
+        console.error('Error creating user:', error.message);
         res.status(500).json({ error: 'Erreur lors de l\'ajout de l\'utilisateur' });
     }
 });
