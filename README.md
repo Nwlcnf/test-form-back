@@ -12,9 +12,9 @@ L'architecture est contenue dans un environnement Dockerisé, testée avec des w
 - Récupération de la liste des utilisateurs inscrits (sans email ni date de naissance pour les utilisateurs non administrateurs)
 - Connexion administrateur
 - Suppression d'un utilisateur (uniquement par l'admin)
-- Documentation API avec Swagger
+- Documentation API avec Swagger : http://localhost:5001/api-docs
 - Tests automatisés (Unitaires, Intégration, E2E avec Cypress)
-- Déploiement automatisé avec Vercel
+- Déploiement automatisé avec Vercel : https://test-form-exemple-back-pezbpwjpw-nawel-chennoufs-projects.vercel.app/api/users
 
 ## Technologies utilisées
 
